@@ -91,6 +91,12 @@ body, html {
 	margin: 0 auto;
 }
 
+@media (max-width: 768px) {
+	.button-container .btn {
+		font-size: 1.000em;
+	}
+}
+
 .button-container .btn:focus {
 	outline: none !important;
 }
