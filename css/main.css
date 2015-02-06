@@ -12,8 +12,31 @@ S T O R Y W E B
 body, html {
     width: 100%;
     height: 100%;
-    background-color: #000000;	
+    background-color: #ffffff;	
     font-family: bigJohn;
+    font-size: 100%;
+    letter-spacing: 0.15em;
+}
+
+h1 {
+	font-size: 3.500em;
+	line-height: 1.125em;
+}
+
+h2 {
+	font-size: 1.125em;
+	line-height: 1.5em;
+}
+
+.title {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.description {
+	width: 90%;
+	margin: 0 auto;
+	font-family: serif;
 }
 
 .slick-slider {
@@ -43,8 +66,11 @@ body, html {
 }
 
 .image {
-	width: 100%;
-	height: 100%;
+	position: absolute;
+	top: -0.5%;
+	left: -0.5%;
+	width: 101% !important;
+	height: 101%;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;
@@ -52,7 +78,11 @@ body, html {
 }
 
 .slick-track, .slick-list {
-	height: 100%;
+	height: 100% !important;
+}
+
+.image  {
+	opacity: 0;
 }
 
 .image img {
@@ -62,7 +92,7 @@ body, html {
 .buttons {
 	position: absolute;
 	width: 100%;
-	height: 25%;
+	height: 20%;
 	background-color: none;
 	bottom: 50px;
 	left: 0;
@@ -77,29 +107,106 @@ body, html {
 	text-align: center;
 }
 
+.buttons .container {
+	width: 100% !important;
+}
+
+.buttons .container {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.button-container {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.btn.action {
+	transition: opacity 0.2s linear;
+}
+
 .button-container .btn {
 	background-color: #832ba0;
-	width: 80%;
+	width: 65%;
 	height: 100%;
 	white-space: normal;
 	text-transform: uppercase;
-	color: #ffffff;
-	opacity: 0.8;
-	letter-spacing: 0.05;
+	letter-spacing: 0.05em;
 	font-size: 1.125em;
 	border-radius: 0px;
 	margin: 0 auto;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	border:0px;
+	color: #ffffff;
+	opacity: 0.8;
+	transition: opacity 0.3s linear;
 }
 
-@media (max-width: 768px) {
-	.button-container .btn {
-		font-size: 0.850em !important;
-	}
+.button-container .btn:hover {
+	opacity: 1;
+	transition: opacity 0.2s linear;
 }
-
 
 .button-container .btn:focus {
 	outline: none !important;
 }
+
+.story-details {
+	position: absolute;
+	top: 50px;
+	z-index: 2;
+	padding-left: 40px;
+	padding-right: 40px;
+	color: #ffffff;
+	text-align: center;
+	transition: opacity 0.3s linear;
+}
+
+/* Mobile improvements */
+
+@media (max-width: 768px) {
+	.button-container .btn {
+		font-size: 0.750em !important;
+	}
+
+	.buttons {
+		height: 15%;
+		bottom: 15px;
+	}
+
+	.button-container {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	.story-details {
+		padding-left: 25px;
+		padding-right: 25px;
+		text-align: left;
+	}
+
+	h1 {
+		font-size: 1.500em;
+	}
+
+	h2 {
+		font-size: 0.850em;
+	}
+
+	.button-container .btn {
+		width: 100%;
+	}
+
+	.description, .title {
+		width: 100%;
+	}
+
+}
+
+
+
 
 

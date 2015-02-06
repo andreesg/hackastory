@@ -9,6 +9,8 @@ app_data.list_stories = [
 	// Main page
 	{
 		_id: 0,
+		title: "Nightwatch sold to hermitage in Russia",
+		description: "The Nightwatch is an invaluable painting by Rembrandt currently hanging in the Rijksmuseum. But some managed to put a value on it, and solt it to the Hermitage in st. Petersburg.",
 		buttons: [
 			{
 				question: "Why did this happen?",
@@ -27,24 +29,28 @@ app_data.list_stories = [
 	// Who bought this?
 	{
 		_id: 1,
+		title: "Why did this happen?",
+		description: "",
 		buttons: [
 			{
 				question: "Why did this happen?",
-				toggle: 0
+				toggle: 1
 			},
 			{
 				question: "Who bought it?",
-				toggle: 0
+				toggle: 2
 			},
 			{
 				question: "What does this mean?",
-				toggle: 0
+				toggle: 3
 			}
 		]
 	},
 	// Putin
 	{
 		_id: 2,
+		title: "Putin",
+		description: "",
 		buttons: [
 			{
 				question: "What happened in Ukraine?",
@@ -63,6 +69,8 @@ app_data.list_stories = [
 	// EU
 	{
 		_id: 3,
+		title: "What does this mean?",
+		description: "",
 		buttons: [
 			{
 				question: "Why did this happen?",
