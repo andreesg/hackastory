@@ -1,0 +1,98 @@
+
+/****************
+S T O R Y W E B 
+*****************/
+
+@font-face {
+    font-family: bigJohn;
+    src: url('../fonts/BIGJOHN.otf');
+}
+
+
+body, html {
+    width: 100%;
+    height: 100%;
+    background-color: #000000;	
+    font-family: bigJohn;
+}
+
+.slick-slider {
+	margin-bottom: 0;
+}
+
+.full-container {
+	position: relative;
+}
+
+.full-container, .stories {
+    width: 100%;
+    height: 100%;
+}
+
+.stories {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.story {
+	width: 100%;
+	height: 100%;
+}
+
+.image {
+	width: 100%;
+	height: 100%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+}
+
+.slick-track, .slick-list {
+	height: 100%;
+}
+
+.image img {
+	height: 100%;
+}
+
+.buttons {
+	position: absolute;
+	width: 100%;
+	height: 25%;
+	background-color: none;
+	bottom: 50px;
+	left: 0;
+}
+
+.buttons .container, 
+.buttons .row,
+.button-container {
+	height: 100%;
+	padding-left: 0px;
+	padding-right: 0px;
+	text-align: center;
+}
+
+.button-container .btn {
+	background-color: #832ba0;
+	width: 80%;
+	height: 100%;
+	white-space: normal;
+	text-transform: uppercase;
+	color: #ffffff;
+	opacity: 0.8;
+	letter-spacing: 0.05;
+	font-size: 1.125em;
+	border-radius: 0px;
+	margin: 0 auto;
+}
+
+.button-container .btn:focus {
+	outline: none !important;
+}
+
+

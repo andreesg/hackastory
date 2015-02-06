@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="img/favicon.ico">
+
+  <title>Storyweb</title>
+
+  <!-- Bootstrap core CSS -->
+
+  <link href="vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/slick/slick.css" rel="stylesheet">
+  <link href="vendor/slick/slick-theme.css" rel="stylesheet">
+
+  <!-- Custom styles -->
+  <link href="css/main.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="full-container">
+
+    <!-- Stories -->
+    <div class="stories">
+      <div class="story">
+        <div class="image" style="background-image:url('img/nightwatch.jpg')"></div>
+        <div class="image" style="background-image:url('img/rembrandt.jpg')"></div>
+      </div>
+      <div class="story">
+        <div class="image" style="background-image:url('img/why.jpg')"></div>
+      </div>
+      <div class="story">
+        <div class="image" style="background-image:url('img/putin.jpeg')"></div>
+      </div>
+      <div class="story">
+        <div class="image" style="background-image:url('img/EU.jpg')"></div>
+      </div>
+    </div>
+  
+    <div class="buttons">
+      <div class="container col-lg-12">
+          <div class="button-container col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <button class="action btn" data-toggle-id="1">Why did this happen?</button>
+          </div>
+
+          <div class="button-container col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <button class="action btn" data-toggle-id="2">Who bought it?</button>
+          </div>
+
+          <div class="button-container col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <button class="action btn" data-toggle-id="3">What does this mean?</button>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Javascript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/bootstrap.min.js"></script>
+  <script src="vendor/slick/slick.min.js"></script>
+  <script src="data/data.js"></script>
+  <script src="js/app.js"></script>
+  <!-- Init main application -->
+  <script>
+    $(document).ready(function() {
+      App.init();
+    })
+  </script>
+
+</body>
+</html>
