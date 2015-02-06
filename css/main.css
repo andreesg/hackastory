@@ -93,9 +93,10 @@ body, html {
 
 @media (max-width: 768px) {
 	.button-container .btn {
-		font-size: 1.000em;
+		font-size: 0.850em !important;
 	}
 }
+
 
 .button-container .btn:focus {
 	outline: none !important;
