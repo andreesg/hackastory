@@ -101,7 +101,7 @@ App.goToStory = function(story_id) {
 	var data = app_data.getStoryById(story_id);
 
 	if (data != -1) {
-		setTimeout(function() {
+		setTimeout(function() {$
 			App.updateButtons(data);
 			App.updateStoryDetails(data);
 			App.storiesContainer.slick('slickGoTo', story_id);
