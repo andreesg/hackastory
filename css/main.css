@@ -8,6 +8,10 @@ S T O R Y W E B
     src: url('../fonts/BIGJOHN.otf');
 }
 
+@font-face {
+    font-family: Archer;
+    src: url('../fonts/Archer-Semibold-Pro.otf');
+}
 
 body, html {
     width: 100%;
@@ -15,7 +19,9 @@ body, html {
     background-color: #ffffff;	
     font-family: 'bigJohn';
     font-size: 100%;
+    line-height: 20px;
     letter-spacing: 0.15em;
+    -webkit-font-smoothing: antialiased;
 }
 
 h1 {
@@ -24,8 +30,11 @@ h1 {
 }
 
 h2 {
-	font-size: 1.125em;
+	font-size: 1.500em;
 	line-height: 1.5em;
+	letter-spacing: 0.10em;
+	font-family: Archer;
+	text-align: justify;
 }
 
 .title {
@@ -34,7 +43,7 @@ h2 {
 }
 
 .description {
-	width: 90%;
+	width: 80%;
 	margin: 0 auto;
 	font-family: serif;
 }
@@ -75,6 +84,18 @@ h2 {
 	-moz-background-size: cover;
 	background-size: cover;
 	background-position: center center;
+
+}
+
+.image:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-image: linear-gradient(to bottom right, #dc4225, #40004b 60%,#dc4225 );
+	opacity: 0.7; 
 }
 
 .slick-track, .slick-list {
@@ -96,6 +117,7 @@ h2 {
 	background-color: none;
 	bottom: 50px;
 	left: 0;
+	z-index: 2;
 }
 
 .buttons .container, 
@@ -146,7 +168,7 @@ h2 {
 }
 
 .button-container .btn:hover {
-	opacity: 1;
+	opacity: 1 !important;
 	transition: opacity 0.2s linear;
 }
 
@@ -162,6 +184,50 @@ h2 {
 	padding-right: 40px;
 	color: #ffffff;
 	text-align: center;
+	transition: opacity 0.3s linear;
+}
+
+#graph {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: -100;
+	opacity: 0;
+}
+
+body.graph-active #graph {
+	z-index: 1;
+	opacity: 1;
+	transition: opacity 0.3s linear;
+}
+
+body.graph-active .story-details {
+	z-index: -1;
+	opacity: 0;
+	transition: opacity 0.3s linear;
+}
+
+body.graph-active .buttons {
+	display: none;
+}
+
+#graph-toggle {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 60px;
+	height: 60px;
+	background-color: #832ba0;
+	z-index: 4;
+	cursor: pointer;
+	opacity: 0.7;
+	transition: opacity 0.3s linear;
+}
+
+#graph-toggle:hover {
+	opacity: 1;
 	transition: opacity 0.3s linear;
 }
 
@@ -203,6 +269,11 @@ h2 {
 
 	.description, .title {
 		width: 100%;
+	}
+
+	#graph-toggle {
+		width: 40px;
+		height: 40px;
 	}
 
 }

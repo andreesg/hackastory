@@ -70,11 +70,11 @@ App.updateButtons = function(data) {
 }
 
 App.updateDescription = function(description) {
-	App.descriptionContainer.html(description);
+	App.descriptionContainer.html(description[0]);
 }
 
 App.updateTitle = function(title) {
-	App.titleContainer.html(title);
+	App.titleContainer.html(title[0]);
 }
 
 App.updateDocumentHash = function(hash) {
@@ -107,6 +107,9 @@ App.goToStory = function(story_id) {
 			App.storiesContainer.slick('slickGoTo', story_id);
 			App.actionButtons.css("opacity", 0.8);
 			App.storyDetailsContainer.css("opacity", 1);
+			if ($("body").hasClass('graph-active')) {
+				$("body").removeClass('graph-active');
+			}
 		}, 500);
 	}
 }
@@ -119,12 +122,20 @@ App.mainAction = function(event) {
 	}
 }
 
+App.toggleGraph = function() {
+	$("body").toggleClass('graph-active');
+}
+
 App.initEvents = function() {
 	App.actionButtons.click(App.mainAction);
+	App.graphToggle.click(App.toggleGraph);
 }
 
 App.setProperties = function() {
+	App.network = null;
 	App.pathSelected = [];
+	App.graphContainer = $("#graph");
+	App.graphToggle = $("#graph-toggle");
 	App.imageContainer = $(".image");
 	App.storyDetailsContainer = $(".story-details");
 	App.fullContainer = $(".full-container");
@@ -135,10 +146,128 @@ App.setProperties = function() {
 	App.titleContainer = $(".title h1");
 }
 
+App.destroyGraph = function() {
+	if (App.network !== null) {
+        App.network.destroy();
+        App.network = null;
+    }
+}
+
+App.randomGenerateNodes = function() {
+	var nodes = [];
+	var edges = [];
+	
+	for (var i = 0; i < nodeCount; i++) {
+		nodes.push({
+	  	id: i,
+	  	label: String(i)
+		});
+	}
+	
+	for (var i = 0; i < nodeCount; i++) {
+		var from = i;
+		var to = i;
+		to = i;
+		while (to == i) {
+	  		to = Math.floor(Math.random() * (nodeCount));
+		}
+		edges.push({
+	  		from: from,
+	  		to: to
+		});
+	}
+}
+
+App.createNodes = function() {
+	var nodes = [];
+	var data = app_data.list_stories;
+
+	for (var i = 0; i < data.length; i++) {
+		nodes.push({id: data[i]._id, label: data[i].title[0]});
+	}
+
+	App.graphNodes = nodes;
+}
+
+App.createEdges = function() {
+	var edges = []
+	var data = app_data.list_stories;
+
+	for (var i = 0; i < data.length; i++) {
+		var buttons = data[i].buttons;
+		for (j = 0; j < buttons.length; j++) {
+			edges.push({from: data[i]._id, to: buttons[j].toggle});
+		}
+	}
+
+	App.graphEdges = edges;
+}
+
+App.createConnections = function() {
+	App.createNodes();
+	App.createEdges();
+}
+
+App.drawGraph = function() {
+	var nodes = null;
+    var edges = null;
+    var network = null;
+
+	App.destroyGraph();
+
+	App.graphNodes = [];
+	App.graphEdges = [];
+
+	App.createConnections();
+
+	// create a network
+	var clusteringOn = true;
+	var container = document.getElementById('graph');
+	var data = {
+		nodes: App.graphNodes,
+		edges: App.graphEdges
+	};
+
+	var options = {
+		physics: {barnesHut:{springLength:500}}, // this is the correct way to set the length of the springs
+		clustering: {
+	  		enabled: clusteringOn
+		},
+		stabilize: false,
+		nodes: {
+			color: {
+				background: 'white',
+				border: '#832ba0',
+				highlight: {
+					background: '#832ba0',
+					border: '#832ba0'
+				}
+			},
+			radius: 24,
+			shape: "dot",
+			fontColor: "#ffffff"
+
+		}
+	};
+
+	App.network = new vis.Network(container, data, options);
+
+	// add event listeners
+	App.network.on('select', function(params) {
+		var story_id = parseInt(params.nodes[0]);
+		App.goToStory(story_id);
+	});
+}
+
+App.initGraph = function() {
+	App.drawGraph();
+}
+
 App.init = function() {
 	App.setProperties();
     App.initStories();
     App.initEvents();
+    App.initGraph();
 }
 
 
