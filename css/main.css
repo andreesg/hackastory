@@ -288,15 +288,25 @@ body.graph-active #graph-toggle .icon-mag {
 }
 
 .slick-prev {
-	left: 25px;
+	left: 16px;
 }
 
 .slick-next {
-	right: 25px;
+	right: 16px;
 }
 
 .slick-prev, .slick-next {
 	z-index: 4;
+}
+
+.slick-next, .slick-prev {
+	width: 30px;
+	height: 30px;
+	margin-top: -15px;
+}
+
+.slick-next:before, .slick-prev:before {
+	font-size: 30px;
 }
 
 /* Mobile improvements */
@@ -368,6 +378,12 @@ body.graph-active #graph-toggle .icon-mag {
 
 	.slick-next {
 		right: 2px;
+	}
+
+	.slick-next, .slick-prev {
+		width: 20px;
+		height: 20px;
+		margin-top: -10px;
 	}
 
 }
