@@ -271,7 +271,7 @@ App.drawGraph = function() {
 	App.network = new vis.Network(container, data, options);
 
 	// add event listeners
-	App.network.on('select', function(params) {
+	App.network.on('click', function(params) {
 		var story_id = parseInt(params.nodes[0]);
 		App.goToStory(story_id);
 	});
