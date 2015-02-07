@@ -362,6 +362,14 @@ body.graph-active #graph-toggle .icon-mag {
 		background-size: 20px 20px;
 	}
 
+	.slick-prev {
+		left: 5px;
+	}
+
+	.slick-next {
+		right: 5px;
+	}
+
 }
 
 
