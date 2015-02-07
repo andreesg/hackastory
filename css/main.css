@@ -363,11 +363,11 @@ body.graph-active #graph-toggle .icon-mag {
 	}
 
 	.slick-prev {
-		left: 5px;
+		left: 2px;
 	}
 
 	.slick-next {
-		right: 5px;
+		right: 2px;
 	}
 
 }
