@@ -37,7 +37,7 @@ app_data.list_stories = [
 	            toggle: 3
 	        },
 	        {
-	            question: "What will he do with it?",
+	            question: "Where will the painting go now?",
 	            toggle: 5
 	        },
 	        {
@@ -50,18 +50,18 @@ app_data.list_stories = [
 	{
 	    _id: 2,
 	    title: ["Impossible to establish value", "The Night Watch is uninsurable"],
-	    description: ["Originally, the Night Watch was purchased by the Amsterdam Civic Guard for 1,600 Dutch guilders (around €750). Officially, the Night Watch was never valued, since it is deemed invaluable. An unofficial attempt to put a price on the painting based on the price of other Rembrandt's valued it at half a billion euros.", "Rembrandt's most famous painting is considered irreplacable. This goes for many paintings whose iconic value overshadows possibilities of insurance. Thus irconically, the most famous works in the world are not insured. The most a museum can do to protect itself is to insure itself agains loss of income once pieces in their collection are destroyed."],
+	    description: ["Originally, the Night Watch was purchased by the Amsterdam Civic Guard for 1,600 Dutch guilders (around €750). Officially, the Night Watch was never valued, since it is deemed invaluable. An unofficial attempt to put a price on the painting based on the price of other Rembrandtd paintings valued it at half a billion euros.", "Rembrandt's most famous painting is considered irreplacable. This goes for many paintings whose iconic value overshadows possibilities of insurance. Thus irconically, the most famous works in the world are not insured. The most a museum can do to protect itself is to insure itself agains loss of income once pieces in their collection are destroyed."],
 	    buttons: [
 	        {
 	            question: "Who sold it?",
 	            toggle: 3
 	        },
 	        {
-	            question: "What do we get in return?",
-	            toggle: 4
+	            question: "Who bought it?",
+	            toggle: 2
 	        },
 	        {
-	            question: "Who owns the Night Watch now?",
+	            question: "Who owned the Night Watch?",
 	            toggle: 6
 	        }
 	    ]
@@ -69,7 +69,7 @@ app_data.list_stories = [
 	// EU and royal deal
 	{
 	    _id: 3,
-	    title: ["The European Union made a deal that involves the Night Watch", "Royals in Russia"],
+	    title: ["The European Union made the deal", "Royals in Russia"],
 	    description: ["The Dutch government offered the Night Watch as the ultimate trading instrument to ensure stability at the EU borders.", "The Dutch government offered the Night Watch as the ultimate trading instrument to ensure stability at the EU borders."],
 	    buttons: [
 	        {
@@ -117,7 +117,7 @@ app_data.list_stories = [
 	            toggle: 12
 	        },
 	        {
-	            question: "Who owns the Night Watch now?",
+	            question: "Who owned the Night Watch?",
 	            toggle: 6
 	        },
 	        {
@@ -153,8 +153,8 @@ app_data.list_stories = [
 	    description: ["Of course, stability in Crimea and the Eastern borders of the EU in general does wonders for global economic and political stability. But the great deplition of oil reserves in the EU after Russia limited delivery is even more problematic on the short term. If the situation would have existed for more than a year, the energy reserves of the EU would have run out.", "The petroleum industry in Russia is one of the largest in the world. Russia is the biggest producer of oil and the third largest energy consumer. All oil trunk pipelines (except Caspian Pipeline Consortium) are owned and operated by the state-owned monopoly Transneft."],
 	    buttons: [
 	        {
-	            question: "What's the catch?",
-	            toggle: 9
+	            question: "What does it cost?",
+	            toggle: 2
 	        },
 	        {
 	            question: "Where will the painting go now?",
@@ -197,7 +197,7 @@ app_data.list_stories = [
 	            toggle: 11
 	        },
 	        {
-	            question: "WHow was the fake made?",
+	            question: "How was the fake made?",
 	            toggle: 10
 	        },
 	        {
@@ -210,7 +210,7 @@ app_data.list_stories = [
 	{
 	    _id: 10,
 	    title: ["Secret copy created during restauration", "Night Watch vandalised by brute"],
-	    description: ["In the aftermath of the violation of the Night Watch in 1975 the painting was restaurated in a secret location. During this restauration process, the painting was actually copies as well as restored. Only the copy returned to the Rijksmuem to be visible for the general public.", "On Thursday afternoon a distorted man attacked the Night Watch with a kitchen knife and vandalised the famous masterpiece."],
+	    description: ["In the aftermath of the violation of the Night Watch in 1975 the painting was restored in a secret location. During this restauration process, he painting was actually copied as well as restored. The copy was shown in the Rijksmuseum, the original was held on a secret location.", "On Thursday afternoon a distorted man attacked the Night Watch with a kitchen knife and vandalised the famous masterpiece."],
 	    buttons: [
 	        {
 	            question: "Who knew about this?",
@@ -230,19 +230,19 @@ app_data.list_stories = [
 	{
 	    _id: 11,
 	    title: ["Chinese master forger hired to create fake Night Watch", "Chinese copying skills beyond belief"],
-	    description: ["During the restauration period, the Chinese matser forger mr. Hu stayed in Amsterdam. It was unclear at the time why he was in the country but it was assumed he was here to study techniques from the Dutch masters.", "The Dutch experts where extremely impressed with the skills of the Chinese master forger. Since they were all sworn to secrecy about the fake Night Watch, none of them ever went public with their admiration for mister Hu. Until now."],
+	    description: ["During the restauration period, the Chinese mster forger Mr. Hu stayed in Amsterdam. It was unclear at the time why he was in the country but it was assumed he was here to study techniques from the Dutch masters.", "The Dutch experts where extremely impressed with the skills of the Chinese master forger. Since they were all sworn to secrecy about the fake Night Watch, none of them ever went public with their admiration for mister Hu. Until now."],
 	    buttons: [
 	        {
 	            question: "How are the Chinese involved?",
 	            toggle: 12
 	        },
 	        {
-	            question: "",
-	            toggle: 0
+	            question: "How was the fake made?",
+	            toggle: 10
 	        },
 	        {
-	            question: "",
-	            toggle: 0
+	            question: "Where was it made",
+	            toggle: 6
 	        }
 	    ]
 	},
@@ -253,7 +253,7 @@ app_data.list_stories = [
 	    description: ["The Russians are in desperate need of new allies, now that the relationships with the US have reached a freezing point. The Chinese seem the logical choice.", "The Night Watch is expected to attract over 3 milion Chinese tourist per year. Numbers like that will put Russia firmly on the map with the rapidly growing Chinese middle class."],
 	    buttons: [
 	        {
-	            question: "Who owns the Night Watch now?",
+	            question: "Who owned the Night Watch?",
 	            toggle: 6
 	        },
 	        {
@@ -261,8 +261,8 @@ app_data.list_stories = [
 	            toggle: 8
 	        },
 	        {
-	            question: "",
-	            toggle: 0
+	            question: "What's the catch?",
+	            toggle: 9
 	        }
 	    ]
 	}

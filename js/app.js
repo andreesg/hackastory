@@ -101,6 +101,11 @@ App.goToStory = function(story_id) {
 	var data = app_data.getStoryById(story_id);
 
 	if (data != -1) {
+		
+		if (!App.backToggle.hasClass('active')) {
+			App.backToggle.addClass('active');
+		}
+
 		setTimeout(function() {$
 			App.updateButtons(data);
 			App.updateStoryDetails(data);
@@ -126,16 +131,29 @@ App.toggleGraph = function() {
 	$("body").toggleClass('graph-active');
 }
 
+App.goBack = function() {
+	var path = App.pathSelected;
+	if (path.length > 1) {
+		path.splice(-1, 1);
+		if (path.length > 1) {
+			var last_story = path[path.length-1];
+			App.goToStory(last_story);
+		}
+	}
+}
+
 App.initEvents = function() {
 	App.actionButtons.click(App.mainAction);
 	App.graphToggle.click(App.toggleGraph);
+	App.backToggle.click(App.goBack);
 }
 
 App.setProperties = function() {
 	App.network = null;
-	App.pathSelected = [];
+	App.pathSelected = ["0"];
 	App.graphContainer = $("#graph");
 	App.graphToggle = $("#graph-toggle");
+	App.backToggle = $("#back-toggle");
 	App.imageContainer = $(".image");
 	App.storyDetailsContainer = $(".story-details");
 	App.fullContainer = $(".full-container");
