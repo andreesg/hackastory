@@ -267,17 +267,24 @@ App.drawGraph = function() {
 		stabilize: false,
 		nodes: {
 			color: {
-				background: 'white',
-				border: '#832ba0',
+				background: '#fef341',
+				border: '#000000',
 				highlight: {
-					background: '#832ba0',
-					border: '#832ba0'
+					background: '#fef341',
+					border: '#000000'
 				}
 			},
 			radius: 24,
 			shape: "dot",
-			fontColor: "#ffffff"
+			fontColor: "#ffffff",
+			fontFace: 'bigJohn'
 
+		},
+		edges: {
+			color: {
+				color: "#fef341",
+				highlight: "#000000"
+			}
 		}
 	};
 
