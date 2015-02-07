@@ -303,7 +303,7 @@ body.graph-active #graph-toggle .icon-mag {
 
 @media (max-width: 768px) {
 	.button-container .btn {
-		font-size: 0.750em !important;
+		font-size: 0.650em !important;
 	}
 
 	.buttons {
