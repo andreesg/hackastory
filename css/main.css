@@ -386,6 +386,11 @@ body.graph-active #graph-toggle .icon-mag {
 		margin-top: -10px;
 	}
 
+	.slick-next:before, .slick-prev:before {
+		font-size: 20px;
+	}
+
+
 }
 
 
