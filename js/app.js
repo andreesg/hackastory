@@ -17,6 +17,14 @@ App.getInitialSlide = function() {
 	return 0;
 }
 
+App.storyPicChange = function(event, slick, currentSlide) {
+	var current_story = App.storiesContainer.slick('slickCurrentSlide');
+	var data = app_data.list_stories[current_story];
+
+	App.updateDescription(data.description[currentSlide]);
+	App.updateTitle(data.title[currentSlide]);
+}
+
 App.initStories = function() {
 	var initialSlide = App.getInitialSlide();
 
@@ -36,15 +44,19 @@ App.initStories = function() {
 	});	
 
 	App.stories.slick({
-		accessibility: false,
+		accessibility: true,
 		draggable: true,
 		dots: false,
 		infinite: true,
-		speed: 0,
+		speed: 200,
 		slidesToShow: 1,
-		arrows: false,
-		adaptiveHeight: true
+		arrows: true,
+		fade: true,
+		cssEase: 'linear',
+		adaptiveHeight: false
 	});
+
+	App.stories.on('afterChange', App.storyPicChange);
 
 	if (initialSlide != 0) {
 		var data = app_data.getStoryById(initialSlide);
@@ -54,6 +66,7 @@ App.initStories = function() {
 
 	imagesLoaded(document.querySelector("#main-stories"), function( instance ) {
 		App.imageContainer.css('opacity', 1);
+		$(".slick-clone").css('opacity', 1);
 	});
 }
 
@@ -70,11 +83,11 @@ App.updateButtons = function(data) {
 }
 
 App.updateDescription = function(description) {
-	App.descriptionContainer.html(description[0]);
+	App.descriptionContainer.html(description);
 }
 
 App.updateTitle = function(title) {
-	App.titleContainer.html(title[0]);
+	App.titleContainer.html(title);
 }
 
 App.updateDocumentHash = function(hash) {
@@ -86,8 +99,8 @@ App.updateStoryDetails = function(data) {
 	var description = data.description;
 	var _id = data._id;
 
-	App.updateDescription(description);
-	App.updateTitle(title);
+	App.updateDescription(description[0]);
+	App.updateTitle(title[0]);
 	App.updateDocumentHash(_id);
 }
 
@@ -201,7 +214,7 @@ App.createNodes = function() {
 	var data = app_data.list_stories;
 
 	for (var i = 0; i < data.length; i++) {
-		nodes.push({id: data[i]._id, label: data[i].title[0]});
+		nodes.push({id: data[i]._id, label: data[i].nodetitle[0]});
 	}
 
 	App.graphNodes = nodes;

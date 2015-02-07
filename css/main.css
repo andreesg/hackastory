@@ -75,7 +75,7 @@ h2 {
 }
 
 .image {
-	position: absolute;
+	position: relative;
 	top: -0.5%;
 	left: -0.5%;
 	width: 101% !important;
@@ -104,10 +104,6 @@ h2 {
 
 .image  {
 	opacity: 0;
-}
-
-.image img {
-	height: 100%;
 }
 
 .buttons {
@@ -271,6 +267,14 @@ body.graph-active #graph-toggle .icon-mag {
 	height: 100%;
 	background: url('../img/icon-back.png') no-repeat center center;
 	background-size: 40px 40px;
+}
+
+.slick-prev {
+	left: 25px;
+}
+
+.slick-next {
+	right: 25px;
 }
 
 /* Mobile improvements */
