@@ -148,7 +148,7 @@ App.goBack = function() {
 	var path = App.pathSelected;
 	if (path.length > 1) {
 		path.splice(-1, 1);
-		if (path.length > 1) {
+		if (path.length > 0) {
 			var last_story = path[path.length-1];
 			App.goToStory(last_story);
 		}

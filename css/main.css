@@ -84,7 +84,6 @@ h2 {
 	-moz-background-size: cover;
 	background-size: cover;
 	background-position: center center;
-
 }
 
 .image:before {
@@ -94,8 +93,15 @@ h2 {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background-image: linear-gradient(to bottom right, #dc4225, #40004b 60%,#dc4225 );
+	background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
 	opacity: 0.7; 
+}
+
+body.graph-active .image {
+	-webkit-filter: blur(5px);
+  	-moz-filter: blur(5px);
+  	-o-filter: blur(5px);
+  	-ms-filter: blur(5px);
 }
 
 .slick-track, .slick-list {
@@ -144,7 +150,7 @@ h2 {
 }
 
 .button-container .btn {
-	background-color: #832ba0;
+	background-color: #000000;
 	width: 65%;
 	height: 100%;
 	white-space: normal;
@@ -181,7 +187,19 @@ h2 {
 	color: #ffffff;
 	text-align: center;
 	transition: opacity 0.3s linear;
+	pointer-events:none;
 }
+
+/*.story-details:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-image: linear-gradient(to bottom right, rgba(83,108,117, 0.6), rgba(83,108,117, 0));
+	opacity: 0.6; 
+}*/
 
 #graph {
 	position: absolute;
@@ -275,6 +293,10 @@ body.graph-active #graph-toggle .icon-mag {
 
 .slick-next {
 	right: 25px;
+}
+
+.slick-prev, .slick-next {
+	z-index: 4;
 }
 
 /* Mobile improvements */
